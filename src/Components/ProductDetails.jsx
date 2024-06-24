@@ -5,19 +5,19 @@ import fav from "../assets/fav.png";
 import nature from "../assets/img1.png";
 import other from "../assets/other.png";
 import Items from "./Items";
-import { useNavbarContext } from "./NavbarContext";
+// import { useNavbarContext } from "./NavbarContext";
 import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
-  const { pop, setPop } = useNavbarContext();
+  // const { pop, setPop } = useNavbarContext();
   const navigate = useNavigate();
   const images = Array(4).fill(nature);
 
-  const handleClick = (event) => {
-    event.stopPropagation();
-    console.log("Clicked to open Items");
-    setPop(true);
-  };
+  // const handleClick = (event) => {
+  //   event.stopPropagation();
+  //   console.log("Clicked to open Items");
+  //   setPop(true);
+  // };
 
   // const handleClose = (event) => {
   //   event.stopPropagation();

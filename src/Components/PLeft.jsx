@@ -7,7 +7,7 @@ function PLeft() {
       style={{ marginLeft: 35 }}
     >
       <div className="border-1 bg-blue-900  w-11/12 px-5 py-2 text-xl rounded-md">
-        <p>All cateogiries</p>
+        <p>All categories</p>
       </div>
       <div className="border-1 bg-blue-900 w-11/12 px-5 py-2 rounded-md">
         <p>Allegies</p>

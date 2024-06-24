@@ -9,31 +9,43 @@ import note from "../assets/Icons/Compare.png";
 import sale from "../assets/Sell.png";
 import hand from "../assets/Join.png";
 import BackgroundImage from "../assets/BackgroundImage.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import menu from "../assets/menu.png";
 import { useState, useEffect, useRef } from "react";
 import add from "../assets/add.png";
 // import linkedin from "../assets/linkedin.png";
 
-import linkedin from '../assets/Icons/linkedin_icon.png';
-import facebook from '../assets/Icons/facebook_icon.png';
+import linkedin from "../assets/Icons/linkedin_icon.png";
+import facebook from "../assets/Icons/facebook_icon.png";
 import insta from "../assets/Icons/instagram_icon.png";
-import twitter from '../assets/Icons/twitter_icon.png';
+import twitter from "../assets/Icons/twitter_icon.png";
 // import facebook from "../assets/facebook.png";
 import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa6";
 import { IoLogoInstagram } from "react-icons/io";
 import { FiShoppingCart } from "react-icons/fi";
+// import { useNavbarContext } from "./NavbarContext";
 
 function Nav({ topDivRef, cartItems }) {
   let navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState(""); // State to hold the selected option
+  const [selectedOption, setSelectedOption] = useState("");
   const [inputText, setInputText] = useState("");
+
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsPopupVisible(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPopupVisible(false);
+  };
+
   function handleredirect() {
     console.log("hello");
     navigate("/login");
   }
-  function handleclick() {
+  function handleClick() {
     navigate("/signup");
   }
 
@@ -42,6 +54,9 @@ function Nav({ topDivRef, cartItems }) {
   }
   function handleclicked() {
     navigate("/app");
+  }
+  function handleclick() {
+    navigate("/wishlist");
   }
   return (
     <div
@@ -65,7 +80,7 @@ function Nav({ topDivRef, cartItems }) {
               </li>
             </div>
             <div className="hidden  md:flex md:flex-row md:gap-4 lg:gap-4 xl:flex xl:flex-row xl:justify-between xl:gap-6 text-md font-thin items-center">
-              <li className=" w-fit" onClick={handleclicked}>
+              <li className=" w-fit cursor-pointer" onClick={handleclicked}>
                 Home
               </li>
               <li className=" w-fit">Products </li>
@@ -78,11 +93,86 @@ function Nav({ topDivRef, cartItems }) {
                 className="hidden md:flex flex-row md:gap-2 lg:gap-2 xl:gap-4 text-md items-center font-thin"
                 style={{ marginRight: 2 }}
               >
-                <img src={add} className="w-6 md:w-8 lg:w-10 h-10" />
+                {/* <img src={add} className="w-6 md:w-8 lg:w-10 h-10" onClick={handlePopup} /> */}
+                {/* <div className="relative">
+                  <img
+                    src={add}
+                    className="w-6 md:w-8 lg:w-10 h-10 cursor-pointer"
+                    onClick={handlePopup}
+                    alt="clickable"
+                  />
+                  {isPopupVisible && (
+                    <div className="fixed flex z-10">
+                      <div className="bg-white  p-4 rounded shadow-lg ">
+                        <h2 className="text-xl font-semibold mb-4">
+                          Popup Title
+                        </h2>
+                        <p className="mb-4">
+                          This is the content of the popup.
+                        </p>
+                        <button
+                          className="bg-blue-500 text-white px-4 py-2 rounded"
+                          onClick={handlePopup}
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </div> */}
+                <div
+                  className="relative"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <img
+                    src={add}
+                    className="w-6 md:w-8 lg:w-10 h-10 cursor-pointer"
+                    alt="clickable"
+                    onClick={handleredirect}
+                  />
+                  {isPopupVisible && (
+                    <div className="fixed  flex z-10">
+                      <div className="bg-white p-8 rounded shadow-lg w-80">
+                        <div className="w-full justify-center items-center">
+                          <button className="bg-blue-900 text-white py-2 px-4 rounded mb-4">
+                            Sign In
+                          </button>
+                        </div>
+                        <p className="mb-4">New customer? Start here</p>
+                        <h2 className="text-xl font-semibold mb-2">
+                          Your Account
+                        </h2>
+                        <ul>
+                          <li className="mb-2">
+                            <a href="#" className="text-blue-900">
+                              Order List
+                            </a>
+                          </li>
+                          <li className="mb-2">
+                            <a href="#" className="text-blue-900">
+                              Wishlist
+                            </a>
+                          </li>
+                          <li className="mb-2">
+                            <Link to="/admin" className="text-blue-900">
+                              Seller Dashboard
+                            </Link>
+                          </li>
+                          <li>
+                            <a href="#" className="text-blue-900">
+                              Account Settings
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
                 <li className="">
                   <button
                     className="  text-gray-500  text-md  font-thin  "
-                    onClick={handleclick}
+                    onClick={handleClick}
                   >
                     <p className=" font-thin"> Signup / </p>
                   </button>
@@ -90,7 +180,7 @@ function Nav({ topDivRef, cartItems }) {
                 <li className="">
                   <button
                     onClick={handleredirect}
-                    className=" text-gray-500 text-md  font-thin text-md"
+                    className=" text-gray-500 text-md font-thin text-md"
                   >
                     Signin
                   </button>
@@ -102,7 +192,10 @@ function Nav({ topDivRef, cartItems }) {
                       className="w-6 md:w-8 lg:w-10 xl:w-12 pt-2 h-10 md:h-10 lg:h-10 xl:h-12"
                       onClick={handleCart}
                     /> */}
-                    <FiShoppingCart className="w-6  md:w-8 lg:w-10 xl:w-12 pt-2 h-8 md:h-8 lg:h-8 xl:h-10 text-blue-900" onClick={handleCart}/>
+                    <FiShoppingCart
+                      className="w-6  md:w-8 lg:w-10 xl:w-12 pt-2 h-8 md:h-8 lg:h-8 xl:h-10 text-blue-900"
+                      onClick={handleCart}
+                    />
                   </button>
                   <div
                     className={`absolute -top-2  text-blue-900 right-4 font-semibold ${
@@ -116,6 +209,7 @@ function Nav({ topDivRef, cartItems }) {
                   <button>
                     <img
                       src={like}
+                      onClick={handleclick}
                       className="w-6 md:w-8 lg:w-10 xl:w-12 pt-2 h-10 md:h-12 lg:h-14 xl:h-16"
                     />{" "}
                   </button>
@@ -127,7 +221,7 @@ function Nav({ topDivRef, cartItems }) {
         {/* down div elemenet  */}
         <div
           className="flex flex-row w-16  md:w-screen   xl:gap-20  2xl:gap-12 lg:w-screen md:gap-20
-         xl:w-screen items-center h-fit bg-white text-black border-2 border-grey-500 shadow-lg  lg:px-0 lg:h-fit"
+         xl:w-screen items-center h-fit text-black border-2 border-grey-500 shadow-lg  lg:px-0 lg:h-fit bg-gray-200"
         >
           <div
             className="flex items-center xl:w-100vh  md:ml-2 xl:ml-20 2xl:ml-24 lg:ml-12 lg:gap-10 "
@@ -137,14 +231,31 @@ function Nav({ topDivRef, cartItems }) {
               className="relative flex items-center xl:w-full "
               // style={{ width: "100vh" }}
             >
-              <select className="h-fit py-2 md:w-24 lg:w-36 pl-3 pr-8 text-gray-500 bg-white border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <select className="h-fit py-2 md:w-12 text-[17px] lg:w-20 p-3 text-gray-500 bg-white border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <option>All categories</option>
+                <option>Allegies</option>
+                <option>Bath & Body</option>
+                <option>Cough Cold & flu</option>
+                <option>Digestive Health</option>
+                <option>Drug</option>
+                <option>Eye Care</option>
+                <option>Ear Nose & Throat Care</option>
+                <option>First Aid</option>
+                <option>Foot Care</option>
+                <option>Home Test Monitoring</option>
+                <option>Incontinence</option>
+                <option>Pain Relief & Management</option>
+                <option>Pediatric Care</option>
+                <option>Personal Care</option>
+                <option>Pet</option>
+                <option>Presciption & Packaging</option>
+
                 {/* Add more options here */}
               </select>
               <input
                 type="text"
                 placeholder="Search for products..."
-                className="w-full md:w-72 lg:w-80 xl:w-full   py-2 px-4 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full md:w-72 lg:w-80 xl:w-full py-2 px-4 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button className="absolute right-0 flex items-center justify-center h-full px-4 py-2 bg-blue-500 text-white rounded-r-md focus:outline-none focus:ring-2 focus:ring-blue-500">
                 <svg

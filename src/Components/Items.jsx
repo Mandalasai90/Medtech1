@@ -19,6 +19,7 @@ import { TbSquareRoundedCheckFilled } from "react-icons/tb";
 import product from '../assets/Icons/Product_icon.png';
 import phone from '../assets/Icons/phone_icon.png';
 import report from '../assets/Icons/report_icon.png';
+import ScrollToTop from "./ScrollToTop";
 
 // const cartItems = [
 //   { id: 1, name: "Item 1", quantity: 2 },
@@ -470,6 +471,7 @@ function Items({ onClose, topMargin, addCart, cartItems, setCartItems }) {
           </div>
         )}
       </div>
+      <ScrollToTop/>
     </div>
   );
 }

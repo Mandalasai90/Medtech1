@@ -145,7 +145,6 @@ const Signup = () => {
           <div>
             <div style={{ display: "flex", flexDirection: "row" }}>
               <div>
-                {/* {errors.FullName && <div style={errorStyle}>{errors.FullName}</div>} */}
 
                 <input
                   id="FullName"
