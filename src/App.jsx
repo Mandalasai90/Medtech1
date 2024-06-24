@@ -18,12 +18,12 @@ import Checkout from "./Components/Checkout";
 import Order from "./Components/Order";
 import Wishlist from "./Components/Wishlist";
 import ScrollToTop from "./Components/ScrollToTop";
-import AdminNav from "./DashboardAdmin/AdminNav";
-import AdminPanel from "./DashboardAdmin/AdminPanel";
-import AddProducts from "./DashboardAdmin/AddProducts";
-import Sidebar from "./DashboardAdmin/SideBar";
-import Dashboard from "./DashboardAdmin/Dashboard";
-import Orders from "./DashboardAdmin/Orders";
+import AdminNav from "./Components/DashboardAdmin/AdminNav";
+import AdminPanel from "./Components/DashboardAdmin/AdminPanel";
+import AddProducts from "./Components/DashboardAdmin/AddProducts";
+import Sidebar from "./Components/DashboardAdmin/SideBar";
+import Dashboard from "./Components/DashboardAdmin/Dashboard";
+import Orders from "./Components/DashboardAdmin/Orders";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -96,7 +96,6 @@ function App() {
           }
         />
         <Route element = {<AdminPanel/>}>
-          {/* <Route path="/admin" element={<AdminPanel />} /> */}
 
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/orders" element={<Orders />} />
