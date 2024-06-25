@@ -94,7 +94,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="w-80 p-8 bg-white font-normal shadow-lg">
+    <div className="w-72 p-8 bg-white font-normal shadow-lg">
       < nav className='space-y-4'>
         <div className="flex items-center justify-between p-2 text-gray-600 hover:text-blue-400 cursor-pointer" onClick={toggleDropdown}>
           <div className='flex items-center'>
