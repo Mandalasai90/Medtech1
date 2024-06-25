@@ -68,7 +68,7 @@ function Nav({ topDivRef, cartItems }) {
         <ul className=" text-3xl ">
           {/* Top div logo home  */}
           <div
-            className="flex flex-row gap-8 md:gap-12 lg:gap-20 xl:justify-between items-center font-normal text-xl bg-white text-gray-500 font-sans"
+            className="flex flex-row gap-8 md:gap-12 lg:gap-20 xl:justify-between items-center font-normal text-xl bg-white text-gray-500 "
             // style={{ fontFamily: "helveticaNeue" }}
           >
             <div>
@@ -79,11 +79,11 @@ function Nav({ topDivRef, cartItems }) {
                 />
               </li>
             </div>
-            <div className="hidden  md:flex md:flex-row md:gap-4 lg:gap-4 xl:flex xl:flex-row xl:justify-between xl:gap-6 text-md font-thin items-center">
+            <div className="hidden  md:flex md:flex-row md:gap-4 lg:gap-4 xl:flex xl:flex-row xl:justify-between xl:gap-6  items-center">
               <li className=" w-fit cursor-pointer" onClick={handleclicked}>
                 Home
               </li>
-              <li className=" w-fit">Products </li>
+              <li className=" w-fit ">Products </li>
               <li className="">Why ParamETrade</li>
               <li className="">About Us</li>
               <li className="">Contact Us </li>
@@ -93,49 +93,35 @@ function Nav({ topDivRef, cartItems }) {
                 className="hidden md:flex flex-row md:gap-2 lg:gap-2 xl:gap-4 text-md items-center font-thin"
                 style={{ marginRight: 2 }}
               >
-                {/* <img src={add} className="w-6 md:w-8 lg:w-10 h-10" onClick={handlePopup} /> */}
-                {/* <div className="relative">
-                  <img
-                    src={add}
-                    className="w-6 md:w-8 lg:w-10 h-10 cursor-pointer"
-                    onClick={handlePopup}
-                    alt="clickable"
-                  />
-                  {isPopupVisible && (
-                    <div className="fixed flex z-10">
-                      <div className="bg-white  p-4 rounded shadow-lg ">
-                        <h2 className="text-xl font-semibold mb-4">
-                          Popup Title
-                        </h2>
-                        <p className="mb-4">
-                          This is the content of the popup.
-                        </p>
-                        <button
-                          className="bg-blue-500 text-white px-4 py-2 rounded"
-                          onClick={handlePopup}
-                        >
-                          Close
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div> */}
                 <div
                   className="relative"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <img
-                    src={add}
-                    className="w-6 md:w-8 lg:w-10 h-10 cursor-pointer"
-                    alt="clickable"
-                    onClick={handleredirect}
-                  />
+                  <div className="flex items-center" onClick={handleredirect}>
+                    <img
+                      src={add}
+                      className="w-6 md:w-8 lg:w-10 h-10 cursor-pointer"
+                      alt="clickable"
+                      onClick={handleredirect}
+                    />
+                    <div>
+                      <div className="text-[17px] font-medium">
+                        Hello, Sign in
+                      </div>
+                      <div className="text-[20px] font-semibold">
+                        Account & Lists
+                      </div>
+                    </div>
+                  </div>
                   {isPopupVisible && (
                     <div className="fixed  flex z-10">
                       <div className="bg-white p-8 rounded shadow-lg w-80">
                         <div className="w-full justify-center items-center">
-                          <button className="bg-blue-900 text-white py-2 px-4 rounded mb-4">
+                          <button
+                            className="bg-blue-900 text-white py-2 px-4 rounded mb-4"
+                            onClick={handleredirect}
+                          >
                             Sign In
                           </button>
                         </div>
@@ -150,7 +136,11 @@ function Nav({ topDivRef, cartItems }) {
                             </a>
                           </li>
                           <li className="mb-2">
-                            <a href="#" className="text-blue-900">
+                            <a
+                              href="#"
+                              className="text-blue-900"
+                              onClick={handleclick}
+                            >
                               Wishlist
                             </a>
                           </li>
@@ -169,7 +159,7 @@ function Nav({ topDivRef, cartItems }) {
                     </div>
                   )}
                 </div>
-                <li className="">
+                {/* <li className="">
                   <button
                     className="  text-gray-500  text-md  font-thin  "
                     onClick={handleClick}
@@ -184,7 +174,8 @@ function Nav({ topDivRef, cartItems }) {
                   >
                     Signin
                   </button>
-                </li>
+                </li> */}
+
                 <li className="relative">
                   <button>
                     {/* <img

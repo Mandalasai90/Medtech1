@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"PT Sans"', 'sans-serif'],
+      },
       colors: {
         'custom-blue': '#98C8F4',  // Custom color name and value
         'text-blue':'#061B4E',
