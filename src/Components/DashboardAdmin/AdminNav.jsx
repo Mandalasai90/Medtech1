@@ -14,7 +14,7 @@ const AdminNav = () => {
 
 
   return (
-    <div className="flex justify-between items-center border border-gray-300 bg-white p-4">
+    <div className="flex justify-between items-center border border-gray-300 bg-white p-4 font-ubuntu">
       <div className="font-bold text-xl cursor-pointer" onClick={handleclicked}> 
         <img src= {Logo}/>
          {/* <img

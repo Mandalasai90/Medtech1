@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { CiMenuKebab } from "react-icons/ci";
 import { FiPlus } from "react-icons/fi";
+import ProductFields from "./ProductFields";
 
 const AddProducts = () => {
   const stats = [
@@ -52,18 +53,108 @@ const AddProducts = () => {
     },
   ];
 
+  const [showPopup, setShowPopup] = useState(false);
+  const [category, setCategory] = useState("");
+  const [productType, setProductType] = useState("");
+  const [showDetailPopup, setShowDetailPopup] = useState(false);
+
+  const handleAddNewProductClick = () => {
+    setShowPopup(true);
+  };
+
+  // const handleClosePopup = () => {
+  //   setShowPopup(false);
+  // };
+
+  const handleContinueClick = () => {
+    console.log("Category:", category);
+    console.log("Product Type:", productType);
+    // handleClosePopup();
+    setShowDetailPopup(true);
+  };
+
   return (
-    <div className=" bg-gray-100 w-[calc(100%-288px)] h-full flex justify-center items-center ">
-      <div className="w-[95%] h-full mt-8">
-        <div className="  flex justify-between ">
-          <p className="text-[25px] font-semibold">
+    <div className="relative bg-gray-100 w-[calc(100%-288px)] h-full flex justify-center items-center ">
+      <div className=" w-[95%] h-full mt-8">
+        <div className=" flex justify-between">
+          <p className="text-2xl text-gray-800 font-medium">
             {" "}
             Marketplace Product List{" "}
           </p>
-          <div className="flex items-center bg-blue-900 p-2 rounded-lg text-white text-[20px]">
+          <div
+            className="flex items-center bg-blue-900 p-2 rounded-lg text-white text-[20px] cursor-pointer"
+            onClick={handleAddNewProductClick}
+          >
             <FiPlus />
             <button className="ml-1"> Add New Product</button>
           </div>
+
+          {showPopup && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 ">
+              <div className="bg-white p-6 rounded-lg shadow-lg w-[800px] h-[350px]">
+                <div className="flex flex-col items-center justify-center p-8">
+                  <h2 className="text-xl font-medium text-gray-600 ">
+                    ADD NEW PRODUCT
+                  </h2>
+                  <p className="ml-1 my-1 border-b-[3px] w-[90px] border-blue-600"></p>
+                </div>
+                <div className="flex justify-between p-4">
+                  <div className="mb-4">
+                    <label
+                      className="block text-gray-600 text-sm font-medium mb-2"
+                      htmlFor="category"
+                    >
+                      Category Specification:
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Merchandise"
+                      id="category"
+                      value={category}
+                      onChange={(e) => setCategory(e.target.value)}
+                      className="w-full px-8 py-3 border rounded-lg"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      className="block text-gray-600 text-sm font-medium mb-2"
+                      htmlFor="productType"
+                    >
+                      Product Type:
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="General"
+                      id="productType"
+                      value={productType}
+                      onChange={(e) => setProductType(e.target.value)}
+                      className="w-full px-8 py-3 border rounded-lg"
+                    />
+                  </div>
+                </div>
+                <div className="flex justify-center p-4">
+                  <button
+                    className="bg-blue-600 text-white px-8 py-3 rounded-lg"
+                    onClick={handleContinueClick}
+                  >
+                    Continue
+                  </button>
+                  {/* <button
+                    className="ml-2 bg-gray-500 text-white px-4 py-2 rounded-lg"
+                    onClick={handleClosePopup}
+                    >
+                    Cancel
+                    </button> */}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {showDetailPopup && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 ">
+              <ProductFields/>
+            </div>
+          )}
         </div>
 
         <div className=" flex my-4 -ml-8 justify-around items-center p-4">
@@ -74,7 +165,9 @@ const AddProducts = () => {
             >
               <div className="w-full">
                 <div className="flex justify-between items-center">
-                  <div className="text-lg  font-medium">{stat.label}</div>
+                  <div className="text-[17px] text-gray-700 font-normal">
+                    {stat.label}
+                  </div>
                   <div className="menu-icon">
                     <CiMenuKebab />
                   </div>
@@ -97,11 +190,13 @@ const AddProducts = () => {
             </select>
           </div>
 
-          <div className="overflow-x-scroll w-full mt-4">
+          <div className="overflow-x-scroll w-full mt-4 font-sans">
             <table className=" rounded-lg  bg-white">
               <thead>
                 <tr>
-                  <th className="border-b-2 py-4 min-w-28 pl-4 text-left">Product ID</th>
+                  <th className="border-b-2 py-4 min-w-28 pl-4 text-left">
+                    Product ID
+                  </th>
                   <th className="border-b-2 min-w-28  text-left">Thumbnail</th>
                   <th className="border-b-2 min-w-28 text-left">Name</th>
                   <th className="border-b-2 min-w-28 text-left">

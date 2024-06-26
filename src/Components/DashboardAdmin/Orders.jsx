@@ -48,10 +48,10 @@ function Orders() {
   );
 
   return (
-    <div className="bg-gray-100 w-full h-full flex items-center justify-center">
-      <div className="w-[95%] h-full">
-        <div className="flex  justify-between mt-8">
-          <h1 className="text-3xl font-semibold">List of Orders</h1>
+    <div className="bg-gray-100 w-[calc(100%-288px)] h-full flex items-center justify-center">
+      <div className="w-[95%] h-full mt-8">
+        <div className="flex  justify-between ">
+          <h1 className="text-2xl text-gray-800 font-medium">List of Orders</h1>
 
           <button className="bg-blue-900 flex  items-center text-white p-2 text-xl rounded-md">
             {" "}
@@ -63,11 +63,11 @@ function Orders() {
         <div className="flex justify-evenly mt-6 -ml-8">
           <div className="bg-white w-72 rounded-xl h-32 p-4">
             <div className="flex  items-center justify-between">
-              <h1 className="text-xl">Total Orders</h1>
+              <h1 className="text-[17px] text-gray-700 font-normal">Total Orders</h1>
               <BsThreeDotsVertical />
             </div>
             <div className="flex justify-between mt-4">
-              <h1 className="text-3xl">2,420</h1>
+              <h1 className="text-3xl font-semibold">2,420</h1>
               <span className="bg-green-100 h-7  flex w-16 text-green-500">
                 {" "}
                 <IoIosArrowRoundUp />
@@ -77,11 +77,11 @@ function Orders() {
           </div>
           <div className="bg-white w-72 rounded-xl h-32 p-4">
             <div className="flex justify-between items-center">
-              <h1 className="text-xl">Total Products</h1>
+              <h1 className="text-[17px] text-gray-700 font-normal">Total Products</h1>
               <BsThreeDotsVertical />
             </div>
             <div className="flex justify-between mt-4">
-              <h1 className="text-3xl">3,843</h1>
+              <h1 className="text-3xl font-semibold">3,843</h1>
               <span className="bg-green-100 h-7  flex w-16 text-green-500 ">
                 {" "}
                 <IoIosArrowRoundUp />
@@ -91,11 +91,11 @@ function Orders() {
           </div>
           <div className="bg-white w-72 rounded-xl h-32 p-4">
             <div className="flex justify-between items-center">
-              <h1 className="text-xl">Base Amount</h1>
+              <h1 className="text-[17px] text-gray-700 font-normal">Base Amount</h1>
               <BsThreeDotsVertical />
             </div>
             <div className="flex justify-between mt-4">
-              <h1 className="text-3xl">1,700</h1>
+              <h1 className="text-3xl font-semibold">1,700</h1>
               <span className="bg-red-100 h-7  text-red-500 flex w-16">
                 {" "}
                 <IoIosArrowRoundDown />
@@ -105,11 +105,11 @@ function Orders() {
           </div>
           <div className="bg-white w-72 rounded-xl h-32 p-4">
             <div className="flex justify-between items-center">
-              <h1 className="text-xl">Purchase Amount</h1>
+              <h1 className="text-[17px] text-gray-700 font-normal">Purchase Amount</h1>
               <BsThreeDotsVertical />
             </div>
             <div className="flex justify-between mt-4">
-              <h1 className="text-3xl">2,530</h1>
+              <h1 className="text-3xl font-semibold">2,530</h1>
               <span className="bg-green-100 h-7  flex w-16 text-green-500">
                 {" "}
                 <IoIosArrowRoundUp />
@@ -154,7 +154,7 @@ function Orders() {
         <div className="border rounded-md bg-white mt-4">
           <table className="w-full">
             <thead>
-              <tr className="text-xl border-b">
+              <tr className=" border-b-2">
                 <th className="px-4 py-2 text-left ">Order ID</th>
                 <th className="px-4 py-2 text-left ">Purchased On</th>
                 <th className="px-4 py-2 text-left ">Products</th>

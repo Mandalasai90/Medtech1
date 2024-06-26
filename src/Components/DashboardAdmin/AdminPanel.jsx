@@ -13,7 +13,7 @@ function AdminPanel() {
   // console.log(location.pathname)
 
   return (
-    <div className="flex flex-col w-screen h-screen bg-gray-200">
+    <div className="flex flex-col w-screen h-screen bg-gray-200 font-ubuntu">
       < AdminNav/> 
       <div className="flex-1 flex">
         <Sidebar />
