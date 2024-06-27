@@ -1,14 +1,4 @@
-// import React from 'react'
 
-// const Orders = () => {
-//   return (
-//     <div className='text-[25px]'>
-//       Orders
-//     </div>
-//   )
-// }
-
-// export default Orders
 
 import React, { useState } from "react";
 import { FaFilter } from "react-icons/fa";
@@ -19,51 +9,49 @@ import { IoIosArrowRoundUp } from "react-icons/io";
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 
-function Orders() {
+function Customers() {
   const [searchQuery, setSearchQuery] = useState("");
-  const products = [
+  const customer = [
     {
-      id: "000",
-      thumbnail: "D061D23",
-      name: "Generic Medicine",
-      attributeSet: "350",
-      productStatus: "",
-      status: "",
-      type: "View Order",
+      name: "Rama Manda",
+      email: "ram@pharmetrade",
+      contact: "7893497040",
+      address: "Haardinf Ave iselin, New Jersey",
+      total: "$9.65",
+      list: "1",
     },
     {
-      id: "000",
-      thumbnail: "D061D23",
-      name: "Generic Medicine",
-      attributeSet: "350",
-      productStatus: "",
-      status: "",
-      type: "View Order",
+      name: "Venkat",
+      email: "venkat@pharmetrade",
+      contact: "9908389318",
+      address: "Haardinf Ave iselin, New Jersey",
+      total: "$3.98",
+      list: "View Order",
     },
   ];
-  const filteredProducts = products.filter(
-    (product) =>
-      product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      product.id.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredCustomers = customer.filter(
+    (customer) =>
+      customer.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      customer.id.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   return (
     <div className="bg-gray-100 w-[calc(100%-288px)] h-full flex items-center justify-center">
       <div className="w-[95%] h-full mt-8">
         <div className="flex  justify-between ">
-          <h1 className="text-2xl text-gray-800 font-medium">List of Orders</h1>
+          <h1 className="text-2xl text-gray-800 font-medium">Marketplace Customers </h1>
 
-          <button className="bg-blue-900 flex  items-center text-white p-2 text-xl rounded-md">
+          {/* <button className="bg-blue-900 flex  items-center text-white p-2 text-xl rounded-md">
             {" "}
             <FaPlus />
             Add New Product
-          </button>
+          </button> */}
         </div>
 
-        <div className="flex justify-evenly mt-6 -ml-8">
+        <div className="flex justify-evenly w-[80%] mt-8 -ml-8">
           <div className="bg-white w-72 rounded-xl h-32 p-4">
             <div className="flex  items-center justify-between">
-              <h1 className="text-[17px] text-gray-700 font-normal">Total Orders</h1>
+              <h1 className="text-[17px] text-gray-700 font-normal">Total Customers</h1>
               <BsThreeDotsVertical />
             </div>
             <div className="flex justify-between items-center mt-4">
@@ -77,7 +65,7 @@ function Orders() {
           </div>
           <div className="bg-white w-72 rounded-xl h-32 p-4">
             <div className="flex justify-between items-center">
-              <h1 className="text-[17px] text-gray-700 font-normal">Total Products</h1>
+              <h1 className="text-[17px] text-gray-700 font-normal">Total Orders</h1>
               <BsThreeDotsVertical />
             </div>
             <div className="flex justify-between items-center mt-4">
@@ -91,7 +79,7 @@ function Orders() {
           </div>
           <div className="bg-white w-72 rounded-xl h-32 p-4">
             <div className="flex justify-between items-center">
-              <h1 className="text-[17px] text-gray-700 font-normal">Base Amount</h1>
+              <h1 className="text-[17px] text-gray-700 font-normal">Grand Total</h1>
               <BsThreeDotsVertical />
             </div>
             <div className="flex justify-between items-center mt-4">
@@ -103,7 +91,7 @@ function Orders() {
               </span>
             </div>
           </div>
-          <div className="bg-white w-72 rounded-xl h-32 p-4">
+          {/* <div className="bg-white w-72 rounded-xl h-32 p-4">
             <div className="flex justify-between items-center">
               <h1 className="text-[17px] text-gray-700 font-normal">Purchase Amount</h1>
               <BsThreeDotsVertical />
@@ -116,15 +104,15 @@ function Orders() {
                 17%
               </span>
             </div>
-          </div>
+          </div> */}
         </div>
 
-        <div className="flex items-center justify-between mt-6">
+        <div className="flex items-center justify-between mt-8">
           {/* search start */}
           <div className="relative flex">
             <input
               type="text"
-              placeholder="Search Product"
+              placeholder="Search Customers"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="border rounded-xl  h-12 w-64 text-left p-2"
@@ -151,29 +139,29 @@ function Orders() {
           </div>
         </div>
 
-        <div className="border rounded-md bg-white mt-4">
+        <div className="border rounded-md bg-white mt-8">
           <table className="w-full">
             <thead>
               <tr className=" border-b-2">
-                <th className="px-4 py-2 text-left ">Order ID</th>
-                <th className="px-4 py-2 text-left ">Purchased On</th>
-                <th className="px-4 py-2 text-left ">Products</th>
-                <th className="px-4 py-2 text-left ">Total</th>
-                <th className="px-4 py-2 text-left ">Customer</th>
-                <th className="px-4 py-2 text-left ">Status</th>
-                <th className="px-4 py-2 text-left ">View</th>
+                <th className="px-4 py-2 text-left ">Customer Name</th>
+                <th className="px-4 py-2 text-left ">Email</th>
+                <th className="px-4 py-2 text-left ">Contact No</th>
+                <th className="px-4 py-2 text-left ">Address</th>
+                <th className="px-4 py-2 text-left ">Grand Total</th>
+                <th className="px-4 py-2 text-left ">List of Orders</th>
+                {/* <th className="px-4 py-2 text-left ">View</th> */}
               </tr>
             </thead>
             <tbody>
-              {products.map((product, index) => (
+              {customer.map((customer, index) => (
                 <tr key={index} className="border-b">
-                  <td className="px-4 py-2 ">{product.id}</td>
-                  <td className="px-4 py-2">{product.thumbnail}</td>
-                  <td className="px-4 py-2">{product.name}</td>
-                  <td className="px-4 py-2">{product.attributeSet}</td>
-                  <td className="px-4 py-2">{product.productStatus}</td>
-                  <td className="px-4 py-2">{product.status}</td>
-                  <td className="px-4 py-2">{product.type}</td>
+                  <td className="px-4 py-2 ">{customer.name}</td>
+                  <td className="px-4 py-2">{customer.email}</td>
+                  <td className="px-4 py-2">{customer.contact}</td>
+                  <td className="px-4 py-2">{customer.address}</td>
+                  <td className="px-4 py-2">{customer.total}</td>
+                  <td className="px-4 py-2">{customer.list}</td>
+                  {/* <td className="px-4 py-2">{customer.type}</td> */}
                 </tr>
               ))}
             </tbody>
@@ -184,4 +172,4 @@ function Orders() {
   );
 }
 
-export default Orders;
+export default Customers;

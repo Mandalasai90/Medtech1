@@ -90,7 +90,7 @@ const AddProducts = () => {
           </div>
 
           {showPopup && (
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-100 ">
+            <div className="absolute right-1/4 ">
               <div className="bg-white p-6 rounded-lg shadow-lg w-[800px] h-[350px]">
                 <div className="flex flex-col items-center justify-center p-8">
                   <h2 className="text-xl font-medium text-gray-600 ">

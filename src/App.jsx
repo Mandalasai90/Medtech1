@@ -24,6 +24,8 @@ import AddProducts from "./Components/DashboardAdmin/AddProducts";
 import Sidebar from "./Components/DashboardAdmin/SideBar";
 import Dashboard from "./Components/DashboardAdmin/Dashboard";
 import Orders from "./Components/DashboardAdmin/Orders";
+import Customers from "./Components/DashboardAdmin/Customers";
+import Earnings from "./Components/DashboardAdmin/Earnings";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -56,7 +58,10 @@ function App() {
         location.pathname !== "/changepassword" &&
         location.pathname !== "/admin" && 
         location.pathname !== "/admin/orders" &&
-        location.pathname !== "/admin/addproducts" &&(
+        location.pathname !== "/admin/addproducts" &&
+        location.pathname !== "/admin/customers" &&
+        location.pathname !== "/admin/earnings" &&
+        (
           <Nav topDivRef={topDivRef} cartItems={cartItems} />
         )}
       <Routes>
@@ -100,6 +105,8 @@ function App() {
           <Route path="/admin" element={<Dashboard />} />
           <Route path="/admin/orders" element={<Orders />} />
           <Route path="/admin/addproducts" element={<AddProducts />} />
+          <Route path="/admin/customers" element={<Customers/>}/>
+          <Route path="/admin/earnings" element={<Earnings/>}/>
         </Route>
 
         {/* <Route

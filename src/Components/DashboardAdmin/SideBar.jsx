@@ -288,9 +288,9 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/customers"
-                onClick={() => handleClick("/customers")}
-                className={`flex items-center p-2 ${activeLink === "/customers" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+                to="/admin/customers"
+                onClick={() => handleClick("/admin/customers")}
+                className={`flex items-center p-2 ${activeLink === "/admin/customers" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
               >
                 <span className="ml-3">Customers</span>
               </Link>
@@ -298,17 +298,17 @@ const Sidebar = () => {
           </ul>
         )}
         <Link
-          to="/payouts"
-          onClick={() => handleClick("/payouts")}
-          className={`flex items-center p-2 ${activeLink === "/payouts" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          to="/admin/payouts"
+          onClick={() => handleClick("/admin/payouts")}
+          className={`flex items-center p-2 ${activeLink === "/admin/payouts" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
         >
           <FiDollarSign className="w-6 h-6" />
           <span className="ml-3">Pay Outs</span>
         </Link>
         <Link
-          to="/earnings"
+          to="/admin/earnings"
           onClick={() => handleClick("/earnings")}
-          className={`flex items-center p-2 ${activeLink === "/earnings" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          className={`flex items-center p-2 ${activeLink === "/admin/earnings" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
         >
           <FiDollarSign className="w-6 h-6" />
           <span className="ml-3">Earnings</span>
