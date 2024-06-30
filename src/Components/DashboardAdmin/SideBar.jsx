@@ -1,237 +1,16 @@
-
-
-
-// import React from 'react';
-// import { Link, useNavigate } from "react-router-dom";
-// import { FiHome, FiBox, FiUsers, FiDollarSign, FiSettings } from 'react-icons/fi';
-
-// const Sidebar = ({}) => {
-//   let navigate = useNavigate();
-
-//   return (
-//     <div className="w-64 bg-white font-semibold shadow-lg">
-//       <nav className="">
-//         <Link to="/admin" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiHome className="w-6 h-6" />
-//           <span className="ml-3">Dashboard</span>
-//         </Link>
-//         <Link to="/admin/orders" className="flex items-center p-2 text-gray-600  hover:text-blue-400">
-//           <FiBox className="w-6 h-6" />
-//           <span className="ml-3">Orders</span>
-//         </Link>
-//         <Link to="/admin/addproducts" className="flex items-center p-2 text-gray-600  hover:text-blue-400">
-//           <FiUsers className="w-6 h-6" />
-//           <span className="ml-3">Products</span>
-//         </Link>
-//         <Link to="/customers" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiUsers className="w-6 h-6" />
-//           <span className="ml-3">Customers</span>
-//         </Link>
-//         <Link to="/payouts" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiDollarSign className="w-6 h-6" />
-//           <span className="ml-3">Pay Outs</span>
-//         </Link>
-//         <Link to="/earnings" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiDollarSign className="w-6 h-6" />
-//           <span className="ml-3">Earnings</span>
-//         </Link>
-//         <Link to="/manage-pdf-header" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Manage Print PDF Header Info</span>
-//         </Link>
-//         <Link to="/review" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Review</span>
-//         </Link>
-//         <Link to="/returns" className="flex items-center p-2 text-gray-600  hover:text-blue-400">
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Returns</span>
-//         </Link>
-//         <Link to="/assign-products" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Assign Products</span>
-//         </Link>
-//         <Link to="/assign-product-list" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Assign Product List</span>
-//         </Link>
-//         <Link to="/request-quote" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Request for Quote</span>
-//         </Link>
-//         <Link to="/settings" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Settings</span>
-//         </Link>
-//         <Link to="/seller-info" className="flex items-center p-2 text-gray-600 hover:text-blue-400">
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Seller Information</span>
-//         </Link>
-//       </nav>
-//     </div>
-//   );
-// };
-
-// export default Sidebar;
-
-// import React, { useState } from 'react';
-// import { Link, useNavigate, useLocation } from "react-router-dom";
-// import { FiHome, FiBox, FiUsers, FiDollarSign, FiSettings } from 'react-icons/fi';
-// import { FaChevronDown } from "react-icons/fa";
-
-// const Sidebar = () => {
-//   let navigate = useNavigate();
-//   let location = useLocation();
-//   const [activeLink, setActiveLink] = useState(location.pathname);
-//   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
-//   const handleClick = (path) => {
-//     setActiveLink(path);
-//   };
-
-//   const toggleDropdown = () => {
-//     setIsDropdownOpen(!isDropdownOpen);
-//   };
-
-//   return (
-//     <div className="w-72 p-8 bg-white font-normal shadow-lg font-ubuntu">
-//       < nav className='space-y-4'>
-//         <div className="flex items-center justify-between p-2 text-gray-700 hover:text-blue-400 cursor-pointer" onClick={toggleDropdown}>
-//           <div className='flex items-center'>
-//           <FiHome className="w-6 h-6" />
-//           <span className="ml-3">Dashboard </span>
-//           </div>
-//           <FaChevronDown className='mr-2'/>
-//         </div>
-//         {isDropdownOpen && (
-//           <div className="ml-6">
-//             <Link 
-//               to="/admin" 
-//               onClick={() => handleClick("/admin")} 
-//               className={`flex items-center p-2 ${activeLink === "/admin" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//             >
-//               <FiHome className="w-6 h-6" />
-//               <span className="ml-3">Home</span>
-//             </Link>
-//             <Link 
-//               to="/admin/orders" 
-//               onClick={() => handleClick("/admin/orders")} 
-//               className={`flex items-center p-2 ${activeLink === "/admin/orders" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//             >
-//               <FiBox className="w-6 h-6" />
-//               <span className="ml-3">Orders</span>
-//             </Link>
-//             <Link 
-//               to="/admin/addproducts" 
-//               onClick={() => handleClick("/admin/addproducts")} 
-//               className={`flex items-center p-2 ${activeLink === "/admin/addproducts" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//             >
-//               <FiUsers className="w-6 h-6" />
-//               <span className="ml-3">Products</span>
-//             </Link>
-//             <Link 
-//               to="/customers" 
-//               onClick={() => handleClick("/customers")} 
-//               className={`flex items-center p-2 ${activeLink === "/customers" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//             >
-//               <FiUsers className="w-6 h-6" />
-//               <span className="ml-3">Customers</span>
-//             </Link>
-//           </div>
-//         )}
-//         <Link 
-//           to="/payouts" 
-//           onClick={() => handleClick("/payouts")} 
-//           className={`flex items-center p-2 ${activeLink === "/payouts" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiDollarSign className="w-6 h-6" />
-//           <span className="ml-3">Pay Outs</span>
-//         </Link>
-//         <Link 
-//           to="/earnings" 
-//           onClick={() => handleClick("/earnings")} 
-//           className={`flex items-center p-2 ${activeLink === "/earnings" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiDollarSign className="w-6 h-6" />
-//           <span className="ml-3">Earnings</span>
-//         </Link>
-//         {/* <Link 
-//           to="/manage-pdf-header" 
-//           onClick={() => handleClick("/manage-pdf-header")} 
-//           className={`flex items-center p-2 ${activeLink === "/manage-pdf-header" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Manage Print PDF Header Info</span>
-//         </Link> */}
-//         <Link 
-//           to="/review" 
-//           onClick={() => handleClick("/review")} 
-//           className={`flex items-center p-2 ${activeLink === "/review" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Review</span>
-//         </Link>
-//         <Link 
-//           to="/returns" 
-//           onClick={() => handleClick("/returns")} 
-//           className={`flex items-center p-2 ${activeLink === "/returns" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Returns</span>
-//         </Link>
-//         <Link 
-//           to="/assign-products" 
-//           onClick={() => handleClick("/assign-products")} 
-//           className={`flex items-center p-2 ${activeLink === "/assign-products" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Assign Products</span>
-//         </Link>
-//         <Link 
-//           to="/assign-product-list" 
-//           onClick={() => handleClick("/assign-product-list")} 
-//           className={`flex items-center p-2 ${activeLink === "/assign-product-list" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Assign Product List</span>
-//         </Link>
-//         <Link 
-//           to="/request-quote" 
-//           onClick={() => handleClick("/request-quote")} 
-//           className={`flex items-center p-2 ${activeLink === "/request-quote" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Request for Quote</span>
-//         </Link>
-//         <Link 
-//           to="/settings" 
-//           onClick={() => handleClick("/settings")} 
-//           className={`flex items-center p-2 ${activeLink === "/settings" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Settings</span>
-//         </Link>
-//         <Link 
-//           to="/seller-info" 
-//           onClick={() => handleClick("/seller-info")} 
-//           className={`flex items-center p-2 ${activeLink === "/seller-info" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
-//         >
-//           <FiSettings className="w-6 h-6" />
-//           <span className="ml-3">Seller Information</span>
-//         </Link>
-//       </nav>
-//     </div>
-//   );
-// };
-
-// export default Sidebar;
-
-
-
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { FiDollarSign, FiSettings, FiHome, } from 'react-icons/fi';
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import dashboard from "../../assets/Dashboard_icon.png"
+import payout from "../../assets/Payouts_icon.png"
+import earnings from "../../assets/Earning_icon.png"
+import review from "../../assets/Review_icon.png"
+import returnicon from "../../assets/Returns_icon.png"
+import quote from "../../assets/Request_for_quote_icon.png"
+import settings from "../../assets/Settings_icon.png"
+import sellerinfo from "../../assets/Seller_info_icon.png"
+import assign from "../../assets/Products_list_icon.png"
 
 const Sidebar = () => {
   let navigate = useNavigate();
@@ -250,9 +29,10 @@ const Sidebar = () => {
   return (
     <div className="w-72 p-8 bg-white font-normal shadow-lg font-ubuntu">
       <nav className='space-y-4'>
-        <div className="flex items-center justify-between p-2 text-gray-700 hover:text-blue-400 cursor-pointer" onClick={toggleDropdown}>
+        <div className="flex items-center justify-between p-2 text-gray-700 hover:text-blue-900 cursor-pointer" onClick={toggleDropdown}>
           <div className='flex items-center'>
-          <FiHome className="w-6 h-6" />
+          {/* <FiHome className="w-6 h-6" /> */}
+          <img src={dashboard} className='w-6 h-6'/>
             <span className="ml-3">Dashboard</span>
           </div>
           {isDropdownOpen ? <FaChevronUp className='mr-2' /> : <FaChevronDown className='mr-2' />}
@@ -263,7 +43,7 @@ const Sidebar = () => {
               <Link
                 to="/admin"
                 onClick={() => handleClick("/admin")}
-                className={`flex items-center p-2 ${activeLink === "/admin" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+                className={`flex items-center p-2 ${activeLink === "/admin" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
               >
                 <span className="ml-3">Home</span>
               </Link>
@@ -272,7 +52,7 @@ const Sidebar = () => {
               <Link
                 to="/admin/orders"
                 onClick={() => handleClick("/admin/orders")}
-                className={`flex items-center p-2 ${activeLink === "/admin/orders" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+                className={`flex items-center p-2 ${activeLink === "/admin/orders" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
               >
                 <span className="ml-3">Orders</span>
               </Link>
@@ -281,7 +61,7 @@ const Sidebar = () => {
               <Link
                 to="/admin/addproducts"
                 onClick={() => handleClick("/admin/addproducts")}
-                className={`flex items-center p-2 ${activeLink === "/admin/addproducts" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+                className={`flex items-center p-2 ${activeLink === "/admin/addproducts" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
               >
                 <span className="ml-3">Products</span>
               </Link>
@@ -290,7 +70,7 @@ const Sidebar = () => {
               <Link
                 to="/admin/customers"
                 onClick={() => handleClick("/admin/customers")}
-                className={`flex items-center p-2 ${activeLink === "/admin/customers" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+                className={`flex items-center p-2 ${activeLink === "/admin/customers" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
               >
                 <span className="ml-3">Customers</span>
               </Link>
@@ -300,73 +80,82 @@ const Sidebar = () => {
         <Link
           to="/admin/payouts"
           onClick={() => handleClick("/admin/payouts")}
-          className={`flex items-center p-2 ${activeLink === "/admin/payouts" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          className={`flex items-center p-2 ${activeLink === "/admin/payouts" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
         >
-          <FiDollarSign className="w-6 h-6" />
+          {/* <FiDollarSign className="w-6 h-6" /> */}
+          <img src={payout} className='w-6 h-6'/>
           <span className="ml-3">Pay Outs</span>
         </Link>
         <Link
           to="/admin/earnings"
-          onClick={() => handleClick("/earnings")}
-          className={`flex items-center p-2 ${activeLink === "/admin/earnings" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          onClick={() => handleClick("/admin/earnings")}
+          className={`flex items-center p-2 ${activeLink === "/admin/earnings" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
         >
-          <FiDollarSign className="w-6 h-6" />
+        <img src={earnings} className='w-6 h-6'/>
+          {/* <FiDollarSign className="w-6 h-6" /> */}
           <span className="ml-3">Earnings</span>
         </Link>
         <Link
-          to="/review"
-          onClick={() => handleClick("/review")}
-          className={`flex items-center p-2 ${activeLink === "/review" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          to="/admin/review"
+          onClick={() => handleClick("/admin/review")}
+          className={`flex items-center p-2 ${activeLink === "/admin/review" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
         >
-          <FiSettings className="w-6 h-6" />
+          {/* <FiSettings className="w-6 h-6" /> */}
+          <img src={review} className='w-6 h-6'/>
           <span className="ml-3">Review</span>
         </Link>
         <Link
-          to="/returns"
-          onClick={() => handleClick("/returns")}
-          className={`flex items-center p-2 ${activeLink === "/returns" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          to="admin/returns"
+          onClick={() => handleClick("admin/returns")}
+          className={`flex items-center p-2 ${activeLink === "/admin/returns" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
         >
-          <FiSettings className="w-6 h-6" />
+          {/* <FiSettings className="w-6 h-6" /> */}
+          <img src={returnicon} className='w-6 h-6'/>
           <span className="ml-3">Returns</span>
         </Link>
         <Link
-          to="/assign-products"
-          onClick={() => handleClick("/assign-products")}
-          className={`flex items-center p-2 ${activeLink === "/assign-products" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          to="/admin/assign-products"
+          onClick={() => handleClick("/admin/assign-products")}
+          className={`flex items-center p-2 ${activeLink === "/admin/assign-products" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
         >
-          <FiSettings className="w-6 h-6" />
+          {/* <FiSettings className="w-6 h-6" /> */}
+          <img src={assign} className='w-6 h-6'/>
           <span className="ml-3">Assign Products</span>
         </Link>
         <Link
-          to="/assign-product-list"
-          onClick={() => handleClick("/assign-product-list")}
-          className={`flex items-center p-2 ${activeLink === "/assign-product-list" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          to="/admin/assign-product-list"
+          onClick={() => handleClick("/admin/assign-product-list")}
+          className={`flex items-center p-2 ${activeLink === "/admin/assign-product-list" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
         >
-          <FiSettings className="w-6 h-6" />
+          {/* <FiSettings className="w-6 h-6" /> */}
+          <img src={assign} className='w-6 h-6'/>
           <span className="ml-3">Assign Product List</span>
         </Link>
         <Link
-          to="/request-quote"
-          onClick={() => handleClick("/request-quote")}
-          className={`flex items-center p-2 ${activeLink === "/request-quote" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          to="/admin/request-quote"
+          onClick={() => handleClick("/admin/request-quote")}
+          className={`flex items-center p-2 ${activeLink === "/admin/request-quote" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
         >
-          <FiSettings className="w-6 h-6" />
+          {/* <FiSettings className="w-6 h-6" /> */}
+          <img src={quote} className='w-6 h-6'/>
           <span className="ml-3">Request for Quote</span>
         </Link>
         <Link
-          to="/settings"
-          onClick={() => handleClick("/settings")}
-          className={`flex items-center p-2 ${activeLink === "/settings" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          to="/admin/settings"
+          onClick={() => handleClick("/admin/settings")}
+          className={`flex items-center p-2 ${activeLink === "/admin/settings" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
         >
-          <FiSettings className="w-6 h-6" />
+          {/* <FiSettings className="w-6 h-6" /> */}
+          <img src={settings} className='w-6 h-6'/>
           <span className="ml-3">Settings</span>
         </Link>
         <Link
-          to="/seller-info"
-          onClick={() => handleClick("/seller-info")}
-          className={`flex items-center p-2 ${activeLink === "/seller-info" ? "text-blue-400" : "text-gray-600"} hover:text-blue-400`}
+          to="/admin/seller-info"
+          onClick={() => handleClick("/admin/seller-info")}
+          className={`flex items-center p-2 ${activeLink === "/admin/seller-info" ? "text-blue-900" : "text-gray-900"} hover:text-blue-900`}
         >
-          <FiSettings className="w-6 h-6" />
+          {/* <FiSettings className="w-6 h-6" /> */}
+          <img src={sellerinfo} className='w-6 h-6'/>
           <span className="ml-3">Seller Information</span>
         </Link>
       </nav>

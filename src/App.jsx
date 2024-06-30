@@ -26,6 +26,13 @@ import Dashboard from "./Components/DashboardAdmin/Dashboard";
 import Orders from "./Components/DashboardAdmin/Orders";
 import Customers from "./Components/DashboardAdmin/Customers";
 import Earnings from "./Components/DashboardAdmin/Earnings";
+import Review from "./Components/DashboardAdmin/Review";
+import Return from "./Components/DashboardAdmin/Return";
+import AssignProduct from "./Components/DashboardAdmin/AssignProduct";
+import AssignProductList from "./Components/DashboardAdmin/AssignProductList";
+import Settings from "./Components/DashboardAdmin/Settings";
+import SellerInfo from "./Components/DashboardAdmin/SellerInfo";
+import RequestQuote from "./Components/DashboardAdmin/RequestQuote";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -61,6 +68,14 @@ function App() {
         location.pathname !== "/admin/addproducts" &&
         location.pathname !== "/admin/customers" &&
         location.pathname !== "/admin/earnings" &&
+        location.pathname !== "/admin/review" &&
+        location.pathname !== "/admin/returns" &&
+        location.pathname !== "/admin/assign-products" &&
+        location.pathname !== "/admin/assign-product-list" &&
+        location.pathname !== "/admin/request-quote" &&
+        location.pathname !== "/admin/settings" &&
+        location.pathname !== "/admin/seller-info" &&
+
         (
           <Nav topDivRef={topDivRef} cartItems={cartItems} />
         )}
@@ -107,6 +122,15 @@ function App() {
           <Route path="/admin/addproducts" element={<AddProducts />} />
           <Route path="/admin/customers" element={<Customers/>}/>
           <Route path="/admin/earnings" element={<Earnings/>}/>
+          <Route path="/admin/review" element={<Review/>}/>
+          <Route path="/admin/returns" element={<Return/>}/>
+          <Route path="/admin/assign-products" element={<AssignProduct/>}/>
+          <Route path="/admin/assign-product-list" element={<AssignProductList/>}/>
+          <Route path="/admin/request-quote" element={<RequestQuote/>}/>
+          <Route path="/admin/settings" element={<Settings/>}/>
+          <Route path="/admin/seller-info" element={<SellerInfo/>}/>
+
+
         </Route>
 
         {/* <Route

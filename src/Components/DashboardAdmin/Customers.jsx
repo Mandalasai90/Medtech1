@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { FaFilter } from "react-icons/fa";
 import { IoMdSettings } from "react-icons/io";

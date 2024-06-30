@@ -89,7 +89,7 @@ function Nav({ topDivRef, cartItems }) {
               <li className=" w-fit cursor-pointer" onClick={handleclicked}>
                 Home
               </li>
-              <li className=" w-fit ">Products </li>
+              <li className=" w-fit cursor-pointer" onClick={handleBuy}>Products </li>
               <li className="">Why ParamETrade</li>
               <li className="">About Us</li>
               <li className="">Contact Us </li>
