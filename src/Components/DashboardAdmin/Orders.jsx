@@ -153,7 +153,7 @@ function Orders() {
 
         <div className="border rounded-md bg-white mt-4">
           <table className="w-full">
-            <thead>
+            <thead className="bg-blue-900 text-white">
               <tr className=" border-b-2">
                 <th className="px-4 py-2 text-left ">Order ID</th>
                 <th className="px-4 py-2 text-left ">Purchased On</th>

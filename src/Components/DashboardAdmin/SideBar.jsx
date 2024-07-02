@@ -43,7 +43,7 @@ const Sidebar = () => {
               <Link
                 to="/admin"
                 onClick={() => handleClick("/admin")}
-                className={`flex items-center p-2 ${activeLink === "/admin" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+                className={`flex items-center p-2 ${activeLink === "/admin" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
               >
                 <span className="ml-3">Home</span>
               </Link>
@@ -52,7 +52,7 @@ const Sidebar = () => {
               <Link
                 to="/admin/orders"
                 onClick={() => handleClick("/admin/orders")}
-                className={`flex items-center p-2 ${activeLink === "/admin/orders" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+                className={`flex items-center p-2 ${activeLink === "/admin/orders" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
               >
                 <span className="ml-3">Orders</span>
               </Link>
@@ -61,7 +61,7 @@ const Sidebar = () => {
               <Link
                 to="/admin/addproducts"
                 onClick={() => handleClick("/admin/addproducts")}
-                className={`flex items-center p-2 ${activeLink === "/admin/addproducts" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+                className={`flex items-center p-2 ${activeLink === "/admin/addproducts" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
               >
                 <span className="ml-3">Products</span>
               </Link>
@@ -70,7 +70,7 @@ const Sidebar = () => {
               <Link
                 to="/admin/customers"
                 onClick={() => handleClick("/admin/customers")}
-                className={`flex items-center p-2 ${activeLink === "/admin/customers" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+                className={`flex items-center p-2 ${activeLink === "/admin/customers" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
               >
                 <span className="ml-3">Customers</span>
               </Link>
@@ -80,7 +80,7 @@ const Sidebar = () => {
         <Link
           to="/admin/payouts"
           onClick={() => handleClick("/admin/payouts")}
-          className={`flex items-center p-2 ${activeLink === "/admin/payouts" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+          className={`flex items-center p-2 ${activeLink === "/admin/payouts" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
         >
           {/* <FiDollarSign className="w-6 h-6" /> */}
           <img src={payout} className='w-6 h-6'/>
@@ -89,7 +89,7 @@ const Sidebar = () => {
         <Link
           to="/admin/earnings"
           onClick={() => handleClick("/admin/earnings")}
-          className={`flex items-center p-2 ${activeLink === "/admin/earnings" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+          className={`flex items-center p-2 ${activeLink === "/admin/earnings" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
         >
         <img src={earnings} className='w-6 h-6'/>
           {/* <FiDollarSign className="w-6 h-6" /> */}
@@ -98,7 +98,7 @@ const Sidebar = () => {
         <Link
           to="/admin/review"
           onClick={() => handleClick("/admin/review")}
-          className={`flex items-center p-2 ${activeLink === "/admin/review" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+          className={`flex items-center p-2 ${activeLink === "/admin/review" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
         >
           {/* <FiSettings className="w-6 h-6" /> */}
           <img src={review} className='w-6 h-6'/>
@@ -107,7 +107,7 @@ const Sidebar = () => {
         <Link
           to="admin/returns"
           onClick={() => handleClick("admin/returns")}
-          className={`flex items-center p-2 ${activeLink === "/admin/returns" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+          className={`flex items-center p-2 ${activeLink === "/admin/returns" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
         >
           {/* <FiSettings className="w-6 h-6" /> */}
           <img src={returnicon} className='w-6 h-6'/>
@@ -116,7 +116,7 @@ const Sidebar = () => {
         <Link
           to="/admin/assign-products"
           onClick={() => handleClick("/admin/assign-products")}
-          className={`flex items-center p-2 ${activeLink === "/admin/assign-products" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+          className={`flex items-center p-2 ${activeLink === "/admin/assign-products" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
         >
           {/* <FiSettings className="w-6 h-6" /> */}
           <img src={assign} className='w-6 h-6'/>
@@ -125,7 +125,7 @@ const Sidebar = () => {
         <Link
           to="/admin/assign-product-list"
           onClick={() => handleClick("/admin/assign-product-list")}
-          className={`flex items-center p-2 ${activeLink === "/admin/assign-product-list" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+          className={`flex items-center p-2 ${activeLink === "/admin/assign-product-list" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
         >
           {/* <FiSettings className="w-6 h-6" /> */}
           <img src={assign} className='w-6 h-6'/>
@@ -134,7 +134,7 @@ const Sidebar = () => {
         <Link
           to="/admin/request-quote"
           onClick={() => handleClick("/admin/request-quote")}
-          className={`flex items-center p-2 ${activeLink === "/admin/request-quote" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+          className={`flex items-center p-2 ${activeLink === "/admin/request-quote" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
         >
           {/* <FiSettings className="w-6 h-6" /> */}
           <img src={quote} className='w-6 h-6'/>
@@ -143,7 +143,7 @@ const Sidebar = () => {
         <Link
           to="/admin/settings"
           onClick={() => handleClick("/admin/settings")}
-          className={`flex items-center p-2 ${activeLink === "/admin/settings" ? "text-blue-900" : "text-gray-600"} hover:text-blue-900`}
+          className={`flex items-center p-2 ${activeLink === "/admin/settings" ? "text-blue-900 bg-gray-400" : "text-gray-600"} hover:text-blue-900`}
         >
           {/* <FiSettings className="w-6 h-6" /> */}
           <img src={settings} className='w-6 h-6'/>
@@ -152,7 +152,7 @@ const Sidebar = () => {
         <Link
           to="/admin/seller-info"
           onClick={() => handleClick("/admin/seller-info")}
-          className={`flex items-center p-2 ${activeLink === "/admin/seller-info" ? "text-blue-900" : "text-gray-900"} hover:text-blue-900`}
+          className={`flex items-center p-2 ${activeLink === "/admin/seller-info" ? "text-blue-900 bg-gray-400" : "text-gray-900"} hover:text-blue-900`}
         >
           {/* <FiSettings className="w-6 h-6" /> */}
           <img src={sellerinfo} className='w-6 h-6'/>

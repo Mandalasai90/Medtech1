@@ -64,6 +64,9 @@ function Nav({ topDivRef, cartItems }) {
   function handleAdmin() {
     navigate("/admin");
   }
+  function handleuser() {
+    navigate("/user");
+  }
   return (
     <div
       ref={topDivRef}
@@ -132,7 +135,8 @@ function Nav({ topDivRef, cartItems }) {
                           </button>
                         </div>
                         <p className="mb-4">New customer? Start here</p>
-                        <h2 className="text-xl font-semibold mb-2">
+                        <h2 className="text-xl font-semibold mb-2 cursor-pointer"
+                        onClick={handleuser}>
                           Your Account
                         </h2>
                         <ul>

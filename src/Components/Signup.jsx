@@ -1,11 +1,15 @@
+
+
+
 import React, { useState } from "react";
 import logoImage from "../assets/logo2.png";
 import background_image from "../assets/homepharma.png";
 // import 'react-datepicker/dist/react-datepicker.css';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BiCaretUp } from "react-icons/bi";
 // import DatePicker from 'react-datepicker';
 import OTP2 from "./OTP2";
+
 
 function getSteps() {
   return ["Personal-Info", "Business-Info", "Address-Info", "Done"];
@@ -51,6 +55,7 @@ const Signup = () => {
   });
   const [errors, setErrors] = useState({});
   const steps = getSteps();
+
 
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -108,14 +113,25 @@ const Signup = () => {
 
   const isStepSkipped = (step) => skippedSteps.includes(step);
 
+ 
+  const navigate = useNavigate();
+
   const handleNext = () => {
     if (validateStep(activeStep)) {
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
-      setSkippedSteps((prevSkippedSteps) =>
-        prevSkippedSteps.filter((skipItem) => skipItem !== activeStep)
-      );
+      if (activeStep === 0 && usertype === "buyer") {
+        setActiveStep(3);
+      } else if (activeStep === steps.length - 1) {
+        navigate('/app');
+      } else {
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        setSkippedSteps((prevSkippedSteps) =>
+          prevSkippedSteps.filter((skipItem) => skipItem !== activeStep)
+        );
+      }
     }
   };
+
+
 
   const handleBack = () => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
@@ -132,14 +148,17 @@ const Signup = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
+
   const [usertype, setusertype] = useState("");
 
   const handleusertypechange = (value) => {
     // alert("handl usertypkjsdcnc");
     setusertype(value);
-    if (value === "buyer") {
-      setActiveStep(3);
-    }
+    // if (value === "buyer") {
+    //   if(validateStep(0)==1)
+    //     ;
+    //   setActiveStep(3);
+    // }
   };
 
   const getStepContent = (step) => {
@@ -250,47 +269,46 @@ const Signup = () => {
               </div>
 
               <div className="flex items-center justify-between ">
-                  <div className="flex items-center ">
-                    <input
-                      type="radio"
-                      id="seller"
-                      name="usertype"
-                      value="seller"
-                      checked={usertype === "seller"}
-                      onChange={(e) => handleusertypechange(e.target.value)}
-                    />
-                    <label htmlFor="seller" className="">
-                      Seller
-                    </label>
-                  </div>
-                  <div className="flex items-center ml-2">
-                    <input
-                      type="radio"
-                      id="buyer"
-                      name="usertype"
-                      value="buyer"
-                      checked={usertype === "buyer"}
-                      onChange={(e) => handleusertypechange(e.target.value)}
-                    />
-                    <label htmlFor="buyer" className="">
-                      Buyer
-                    </label>
-                  </div>
-                  <div className="flex items-center ml-2">
-                    <input
-                      type="radio"
-                      id="buyer-seller"
-                      name="usertype"
-                      value="buyer-seller"
-                      checked={usertype === "buyer-seller"}
-                      onChange={(e) => handleusertypechange(e.target.value)}
-                    />
-                    <label htmlFor="buyer-seller" className="">
-                      Buyer/Seller
-                    </label>
-                  </div>
+                <div className="flex items-center ">
+                  <input
+                    type="radio"
+                    id="seller"
+                    name="usertype"
+                    value="seller"
+                    checked={usertype === "seller"}
+                    onChange={(e) => handleusertypechange(e.target.value)}
+                  />
+                  <label htmlFor="seller" className="">
+                    Seller
+                  </label>
                 </div>
-              
+                <div className="flex items-center ml-2">
+                  <input
+                    type="radio"
+                    id="buyer"
+                    name="usertype"
+                    value="buyer"
+                    checked={usertype === "buyer"}
+                    onChange={(e) => handleusertypechange(e.target.value)}
+                  />
+                  <label htmlFor="buyer" className="">
+                    Buyer
+                  </label>
+                </div>
+                <div className="flex items-center ml-2">
+                  <input
+                    type="radio"
+                    id="buyer-seller"
+                    name="usertype"
+                    value="buyer-seller"
+                    checked={usertype === "buyer-seller"}
+                    onChange={(e) => handleusertypechange(e.target.value)}
+                  />
+                  <label htmlFor="buyer-seller" className="">
+                    Buyer/Seller
+                  </label>
+                </div>
+              </div>
             </div>
             <div className=" mx-14 my-4">
               <input
@@ -718,3 +736,4 @@ const activeCircleStyle = {
 };
 
 export default Signup;
+

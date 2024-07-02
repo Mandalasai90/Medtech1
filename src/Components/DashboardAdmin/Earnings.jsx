@@ -102,7 +102,7 @@ const Earnings = () => {
           <div className="p-4">
             <h2 className="text-xl font-semibold mb-4">Latest Earnings</h2>
             <table className="min-w-full bg-white   border-gray-200">
-              <thead>
+              <thead className="bg-blue-900 text-white">
                 <tr>
                   <th className="py-2  px-4 border-b">Interval</th>
                   <th className="py-2 px-4 border-b border-gray-200">Orders</th>

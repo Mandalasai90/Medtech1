@@ -489,7 +489,7 @@ const AddProducts = () => {
 
           <div className="overflow-x-scroll w-full mt-4 font-sans">
             <table className=" rounded-lg  bg-white">
-              <thead>
+              <thead className="bg-blue-900 text-white">
                 <tr>
                   <th className="border-b-2 py-4 min-w-28 pl-4 text-left">
                     Product ID
